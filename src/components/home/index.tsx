@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { HomeContainer } from './styles'
+import { animations } from '../common/animations'
+import { HomeContainer, Text } from './styles'
 
 const Home = () => {
   const { file } = useStaticQuery(graphql`
@@ -17,8 +18,10 @@ const Home = () => {
 
   return (
     <HomeContainer>
-      <h1>Hi, my name’s Shak.</h1>
-      <p>I’m a full-stack software developer based in Ontario, CA.</p>
+      <Text style={animations.verticleSlide(`15rem`, 0)}>
+        <h1>Hi, my name’s Shak.</h1>
+        <p>I’m a full-stack software developer based in Ontario, CA.</p>
+      </Text>
     </HomeContainer>
   )
 }

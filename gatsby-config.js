@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Portfolio`,
+    title: `exshak`,
     description: `exshak`,
     author: `exshak`,
   },
@@ -17,6 +17,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: 'gatsby-plugin-transition-link',
+      options: {
+        layout: require.resolve(`./src/components/layout/index.tsx`),
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
