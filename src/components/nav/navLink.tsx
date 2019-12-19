@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
 import { CustomLink, LinkContainer } from './styles'
 
-const NavLink = ({ text, to, mouseOver }) => {
+const NavLink = ({ to, text, mouseOver }) => {
   const containerRef = useRef(null)
 
   return (
@@ -19,8 +19,8 @@ const NavLink = ({ text, to, mouseOver }) => {
 }
 
 NavLink.propTypes = {
-  text: PropTypes.string,
   to: PropTypes.string,
+  text: PropTypes.string,
   mouseOver: PropTypes.func,
 }
 

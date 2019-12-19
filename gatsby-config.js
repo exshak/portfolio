@@ -9,8 +9,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
+        path: `${__dirname}/static/img`,
+        name: `img`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/src/assets`,
+        name: `images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/projects`,
+        name: `projects`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -21,6 +35,22 @@ module.exports = {
       resolve: 'gatsby-plugin-transition-link',
       options: {
         layout: require.resolve(`./src/components/layout/index.tsx`),
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-relative-images',
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 2048,
+            },
+          },
+        ],
       },
     },
     {

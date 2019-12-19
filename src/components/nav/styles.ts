@@ -64,6 +64,7 @@ export const MenuButton = styled.button`
   right: calc(100vw / 12);
 
   svg {
+    font-size: 1.6rem;
     fill: ${props => props.theme.colors.white};
   }
 
@@ -135,7 +136,7 @@ export const DrawerList = styled.ul`
   padding: 7rem calc(100vw / 12) 0rem;
   position: relative;
   text-align: right;
-  width: calc(100vw - ((100vw / 12) * 2));
+  /* width: calc(100vw - ((100vw / 12) * 2)); */
 `
 
 export const IconList = styled.ul`
@@ -144,7 +145,7 @@ export const IconList = styled.ul`
   padding: 3.5rem calc(100vw / 12) 7rem;
   position: relative;
   text-align: right;
-  width: calc(100vw - ((100vw / 12) * 2));
+  /* width: calc(100vw - ((100vw / 12) * 2)); */
 `
 
 export const DrawerLink = styled.li`
@@ -154,6 +155,12 @@ export const DrawerLink = styled.li`
   .active {
     color: ${props => props.theme.colors.black};
     opacity: 0.5;
+  }
+
+  svg {
+    /* FIXME: */
+    font-size: 1.6rem;
+    fill: ${props => props.theme.colors.white};
   }
 `
 

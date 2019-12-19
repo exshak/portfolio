@@ -53,10 +53,10 @@ const Nav = ({ animation, toggleNav, visible }) => {
       >
         {navArray.map((item, key) => (
           <NavLink
-            mouseOver={mouseOver}
             key={key}
-            text={item.text}
             to={item.to}
+            text={item.text}
+            mouseOver={mouseOver}
           />
         ))}
         <NavIcon

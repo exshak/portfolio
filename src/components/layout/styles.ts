@@ -90,6 +90,24 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 700;
   }
 
+  button {
+    background: none;
+    outline: none;
+    border: none;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+  }
+
+  input,
+  textarea {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+  } 
+
   @media (min-width: 600px) {
     h1 {
       font-size: 4rem;

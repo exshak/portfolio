@@ -72,3 +72,4 @@ yarn-error.log
 .prettierignore
 gatsby-browser.js
 gatsby-ssr.js
+layout.css

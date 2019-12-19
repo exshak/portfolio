@@ -1,7 +1,43 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require('path')
+const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
-// You can delete this file if you're not using it
+exports.onCreateNode = ({ node }) => {
+  fmImagesToRelative(node)
+}
+
+exports.createPages = async ({
+  actions: { createPage },
+  graphql,
+  reporter,
+}) => {
+  const projectTemplate = path.resolve('src/components/project')
+
+  const { data, errors } = await graphql(`
+    query {
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
+        edges {
+          node {
+            frontmatter {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (errors) {
+    reporter.panicOnBuild('Error while running GraphQL query.')
+    return
+  }
+
+  data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: `projects${node.frontmatter.slug}`,
+      component: projectTemplate,
+      context: {
+        slug: node.frontmatter.slug,
+      },
+    })
+  })
+}
