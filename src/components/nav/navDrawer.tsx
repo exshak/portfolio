@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
+import { SiteMetadata } from '../common/siteMetadata'
 import {
   DrawerContainer,
   DrawerLink,
@@ -9,9 +10,9 @@ import {
   IconList,
 } from './styles'
 
-const navArray = [{ text: 'Home', to: '/' }]
-
 const NavDrawer = ({ animation, toggleNav }) => {
+  const { navArray } = SiteMetadata()
+
   return (
     <DrawerContainer
       style={{

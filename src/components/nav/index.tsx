@@ -1,11 +1,10 @@
 import { Link } from 'gatsby'
 import React, { useState } from 'react'
 import { FaBars, FaGithub, FaLinkedinIn, FaTimes } from 'react-icons/fa'
+import { SiteMetadata } from '../common/siteMetadata'
 import NavIcon from './navIcon'
 import NavLink from './navLink'
 import { Bar, LinkList, Logo, MenuButton, NavContainer } from './styles'
-
-const navArray = [{ text: 'Home', to: '/' }]
 
 const Nav = ({ animation, toggleNav, visible }) => {
   const [position, setPosition] = useState({
@@ -31,6 +30,8 @@ const Nav = ({ animation, toggleNav, visible }) => {
   const mouseLeaveList = () => {
     setActive(0)
   }
+
+  const { navArray } = SiteMetadata()
 
   return (
     <NavContainer>

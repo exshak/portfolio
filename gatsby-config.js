@@ -3,6 +3,11 @@ module.exports = {
     title: `exshak`,
     description: `exshak`,
     author: `exshak`,
+    navArray: [
+      { to: '/', text: 'Home' },
+      { to: '/projects', text: 'Projects' },
+      { to: '/about', text: 'About' },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

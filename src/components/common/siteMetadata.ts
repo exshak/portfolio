@@ -9,6 +9,10 @@ export const SiteMetadata = () => {
             title
             description
             author
+            navArray {
+              to
+              text
+            }
           }
         }
       }
