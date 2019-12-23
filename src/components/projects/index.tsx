@@ -34,7 +34,7 @@ const Projects = () => {
   `)
 
   return (
-    <ProjectsContainer style={animations.verticleSlide(`15rem`, 0)}>
+    <ProjectsContainer style={animations.verticleSlide('15rem', 0)}>
       <h1>Projects</h1>
       <Grid>
         {allMarkdownRemark.edges.map(({ node }, index) => (

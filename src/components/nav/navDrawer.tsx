@@ -11,7 +11,7 @@ import {
 } from './styles'
 
 const NavDrawer = ({ animation, toggleNav }) => {
-  const { navArray } = SiteMetadata()
+  const { navigation, social } = SiteMetadata()
 
   return (
     <DrawerContainer
@@ -27,7 +27,7 @@ const NavDrawer = ({ animation, toggleNav }) => {
             Home
           </Link>
         </DrawerLink>
-        {navArray.map((item, key) => (
+        {navigation.map((item, key) => (
           <DrawerLink key={key} onClick={toggleNav}>
             <Link to={item.to} activeClassName="active">
               {item.text}
@@ -37,20 +37,12 @@ const NavDrawer = ({ animation, toggleNav }) => {
       </DrawerList>
       <IconList>
         <DrawerLink onClick={toggleNav}>
-          <a
-            href="https://github.com/exshak"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={social.github} target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </a>
         </DrawerLink>
         <DrawerLink onClick={toggleNav}>
-          <a
-            href="https://www.linkedin.com/in/exshak"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={social.linkedin} target="_blank" rel="noopener noreferrer">
             <FaLinkedinIn />
           </a>
         </DrawerLink>

@@ -47,7 +47,7 @@ TextLink.propTypes = {
 }
 
 TextLink.defaultProps = {
-  to: `/`,
+  to: '/',
 }
 
 export default TextLink

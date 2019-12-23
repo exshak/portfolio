@@ -31,7 +31,7 @@ const Nav = ({ animation, toggleNav, visible }) => {
     setActive(0)
   }
 
-  const { navArray } = SiteMetadata()
+  const { navigation, social } = SiteMetadata()
 
   return (
     <NavContainer>
@@ -52,7 +52,7 @@ const Nav = ({ animation, toggleNav, visible }) => {
         onMouseOver={mouseEnterList}
         onMouseOut={mouseLeaveList}
       >
-        {navArray.map((item, key) => (
+        {navigation.map((item, key) => (
           <NavLink
             key={key}
             to={item.to}
@@ -60,13 +60,9 @@ const Nav = ({ animation, toggleNav, visible }) => {
             mouseOver={mouseOver}
           />
         ))}
+        <NavIcon to={social.github} icon={<FaGithub />} mouseOver={mouseOver} />
         <NavIcon
-          to="https://github.com/exshak"
-          icon={<FaGithub />}
-          mouseOver={mouseOver}
-        />
-        <NavIcon
-          to="https://www.linkedin.com/in/exshak"
+          to={social.linkedin}
           icon={<FaLinkedinIn />}
           mouseOver={mouseOver}
         />
