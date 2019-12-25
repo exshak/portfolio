@@ -10,7 +10,7 @@ exports.createPages = async ({
   graphql,
   reporter,
 }) => {
-  const projectTemplate = path.resolve('src/components/project/index.tsx')
+  const projectTemplate = path.resolve('src/templates/project.tsx')
 
   const { data, errors } = await graphql(`
     query {

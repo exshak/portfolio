@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <HomeContainer>
       <Text style={animations.verticleSlide('15rem', 0)}>
-        <h1>{`Hi, my name’s ${username}.`}</h1>
+        <h1>Hi, my name’s {username}.</h1>
         <p>{description}</p>
         {navigation.map(
           (item, key) =>
