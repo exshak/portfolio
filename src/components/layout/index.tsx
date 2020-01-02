@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { config, useSpring } from 'react-spring'
 import { ThemeProvider } from 'styled-components'
 import 'typeface-source-sans-pro'
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
   })
 
   return (
-    <>
+    <Fragment>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Nav animation={animation} toggleNav={toggleNav} visible={visible} />
@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
         </Main>
         <NavDrawer animation={animation} toggleNav={toggleNav} />
       </ThemeProvider>
-    </>
+    </Fragment>
   )
 }
 

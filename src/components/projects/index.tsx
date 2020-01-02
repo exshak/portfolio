@@ -18,7 +18,7 @@ const Projects = () => {
               client
               slug
               color
-              outline
+              # outline
               featuredimage {
                 childImageSharp {
                   fluid(maxWidth: 1300, quality: 80) {

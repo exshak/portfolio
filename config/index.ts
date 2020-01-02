@@ -7,8 +7,7 @@ module.exports = {
   pathPrefix: '/',
   backgroundColor: '#222222',
   themeColor: '#1aa0cb',
-  favicon: 'src/assets/images/logo.png',
-  siteLogo: '',
+  favicon: 'src/assets/images/logo.svg',
   siteNav: [
     { to: '/', text: 'Home' },
     { to: '/projects', text: 'Projects', textLong: 'My recent projects' },
@@ -17,6 +16,7 @@ module.exports = {
   ],
   socialLinks: {
     github: 'https://github.com/exshak',
-    linkedin: 'https://www.linkedin.com/in/exshak',
+    linkedin: 'https://linkedin.com/in/exshak',
+    twitter: 'https://twitter.com/exshak',
   },
 }

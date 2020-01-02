@@ -1,7 +1,7 @@
 import { animated } from 'react-spring'
-import styled, { createGlobalStyle, DefaultTheme } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
-export const theme: DefaultTheme = {
+export const theme = {
   breakpoints: {
     tablet: '@media (min-width: 600px)',
     tablet768: '@media (min-width: 768px)',
@@ -11,6 +11,7 @@ export const theme: DefaultTheme = {
   colors: {
     black: '#222222',
     blue: '#1aa0cb',
+    // blue: '#41c7c7',
     white: '#fbfbfb',
   },
 
@@ -43,11 +44,6 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${theme.colors.black};
     color: ${theme.colors.white};
     font-family: 'Source Sans Pro', sans-serif;
-  }
-
-  a {
-    color: ${theme.colors.white};
-    text-decoration: none;
   }
 
   h1,
@@ -86,8 +82,9 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 2.2rem;
   }
 
-  a {
-    font-weight: 700;
+  ol,
+  ul {
+    list-style: none;
   }
 
   button {
@@ -96,17 +93,22 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
   }
 
-  ol,
-  ul {
-    list-style: none;
-  }
-
   input,
   textarea {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
   } 
+
+  a {
+    color: ${theme.colors.white};
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  svg {
+    font-size: 1.6rem;
+  }
 
   @media (min-width: 600px) {
     h1 {

@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
+import logo from '../../assets/images/logo.svg'
 import { SiteMetadata } from '../common/siteMetadata'
 import {
   DrawerContainer,
@@ -47,7 +48,7 @@ const NavDrawer = ({ animation, toggleNav }) => {
           </a>
         </DrawerLink>
       </IconList>
-      <DrawerLogo src="../../assets/images/logo.png" alt="exshak - Logo" />
+      <DrawerLogo src={logo} alt="exshak - Logo" />
     </DrawerContainer>
   )
 }

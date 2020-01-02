@@ -20,7 +20,6 @@ const StyledLink = styled(Link)`
 
   svg {
     color: ${props => props.theme.colors.blue};
-    font-size: 1.6rem;
     margin: 0 0 -0.3rem;
     transform: translate3d(0.5rem, 0, 0);
     ${props => props.theme.transitions.slowSnap}

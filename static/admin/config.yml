@@ -1,0 +1,42 @@
+backend:
+  name: github
+  branch: master
+  repo: exshak/portfolio
+
+media_folder: static/img
+public_folder: /img
+
+# prettier-ignore
+collections:
+  - name: 'projects'
+    label: 'Projects'
+    folder: 'src/projects'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - { label: 'Client', name: 'client', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Tech', name: 'tech', widget: 'string' }
+      - { label: 'Link', name: 'link', widget: 'string' }
+      - { label: 'Repo', name: 'repo', widget: 'string' }
+      - { label: 'Color', name: 'color', widget: 'string' }
+      - { label: 'Featured Image', name: 'featuredimage', widget: 'image' }
+      - { label: 'Content', name: 'content', widget: 'list', 
+          fields: 
+            [
+              { label: 'Image', name: 'image', widget: 'image', required: false },
+              { label: 'Head', name: 'head', widget: 'string', required: false },
+              { label: 'Main', name: 'main', widget: 'text', required: false },
+              { label: 'Layout', name: 'layout', widget: 'select', default: 'left', 
+                options: 
+                  [
+                    { label: "Left", value: "left" },
+                    { label: "Right", value: "right" },
+                    { label: "Middle", value: "middle" },
+                  ], 
+              },
+            ], 
+        }

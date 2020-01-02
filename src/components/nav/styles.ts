@@ -64,7 +64,6 @@ export const MenuButton = styled.button`
   right: calc(100vw / 12);
 
   svg {
-    font-size: 1.6rem;
     fill: ${props => props.theme.colors.white};
   }
 
@@ -111,8 +110,6 @@ export const IconLink = styled.a`
   ${props => props.theme.transitions.slowSnap};
 
   svg {
-    /* FIXME: */
-    font-size: 1.6rem;
     fill: ${props => props.theme.colors.white};
   }
 `
@@ -158,8 +155,6 @@ export const DrawerLink = styled.li`
   }
 
   svg {
-    /* FIXME: */
-    font-size: 1.6rem;
     fill: ${props => props.theme.colors.white};
   }
 `

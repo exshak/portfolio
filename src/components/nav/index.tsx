@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import React, { useState } from 'react'
 import { FaBars, FaGithub, FaLinkedinIn, FaTimes } from 'react-icons/fa'
+import logo from '../../assets/images/logo.svg'
 import { SiteMetadata } from '../common/siteMetadata'
 import NavIcon from './navIcon'
 import NavLink from './navLink'
@@ -42,7 +43,7 @@ const Nav = ({ animation, toggleNav, visible }) => {
               y => `translate3d(0, ${y}rem, 0)`
             ),
           }}
-          src="../../assets/images/logo.png"
+          src={logo}
           alt="exshak - Logo"
         />
       </Link>
