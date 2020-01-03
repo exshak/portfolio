@@ -11,7 +11,6 @@ export const theme = {
   colors: {
     black: '#222222',
     blue: '#1aa0cb',
-    // blue: '#41c7c7',
     white: '#fbfbfb',
   },
 
@@ -73,9 +72,10 @@ export const GlobalStyle = createGlobalStyle`
   a,
   p,
   li,
-  button,
-  input,
+  svg,
   label,
+  input,
+  button,
   textarea {
     font-size: 1.6rem;
     font-weight: 400;
@@ -87,27 +87,21 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
-  button {
-    background: none;
-    outline: none;
-    border: none;
-  }
-
   input,
+  button ,
   textarea {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
+    background: none;
+    outline: none;
+    border: none;
   } 
 
   a {
     color: ${theme.colors.white};
     font-weight: 700;
     text-decoration: none;
-  }
-
-  svg {
-    font-size: 1.6rem;
   }
 
   @media (min-width: 600px) {
@@ -153,5 +147,10 @@ export const Main = styled(animated.main)`
       position: relative;
       z-index: 0;
     }
+  }
+
+  ${theme.breakpoints.desktop} {
+    margin: 0 auto;
+    max-width: 1280px;
   }
 `

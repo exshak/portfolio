@@ -68,8 +68,7 @@ export const Copy = styled.div`
     font-size: 1.8rem;
   }
 
-  color: ${({ client }) =>
-    client === '' ? `#02394A` : props => props.theme.colors.white};
+  color: ${props => props.theme.colors.white};
 
   ${props => props.theme.breakpoints.desktop} {
     padding: 4rem;

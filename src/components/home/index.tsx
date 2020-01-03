@@ -3,10 +3,11 @@ import React from 'react'
 import { animations } from '../common/animations'
 import { SiteMetadata } from '../common/siteMetadata'
 import TextLink from '../common/textLink'
-import { HomeContainer, Text } from './styles'
+import { HomeContainer, SubTitle, Text } from './styles'
+import WordsWheel from './wordsWheel'
 
 const Home = () => {
-  const { description, username, navigation } = SiteMetadata()
+  const { description, username, keywords, navigation } = SiteMetadata()
 
   const { file } = useStaticQuery(graphql`
     query Logo {
@@ -23,8 +24,13 @@ const Home = () => {
   return (
     <HomeContainer>
       <Text style={animations.verticleSlide('15rem', 0)}>
-        <h1>Hi, my name’s {username}.</h1>
-        <p>{description}</p>
+        <h1>
+          {/* Hi <span>👋🏻</span>, my name’s <span>{username}</span> */}
+          Hello <span>👋🏻</span>, I'm <span>{username}</span>
+        </h1>
+        <SubTitle>
+          A <WordsWheel words={keywords} /> {description}
+        </SubTitle>
         {navigation.map(
           (item, key) =>
             item.textLong && (

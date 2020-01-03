@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
-import logo from '../../assets/images/logo.svg'
+import logo from '../../assets/images/default.svg'
 import { SiteMetadata } from '../common/siteMetadata'
 import {
   DrawerContainer,

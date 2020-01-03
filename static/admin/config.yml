@@ -27,16 +27,16 @@ collections:
       - { label: 'Content', name: 'content', widget: 'list', 
           fields: 
             [
-              { label: 'Image', name: 'image', widget: 'image', required: false },
-              { label: 'Head', name: 'head', widget: 'string', required: false },
-              { label: 'Main', name: 'main', widget: 'text', required: false },
               { label: 'Layout', name: 'layout', widget: 'select', default: 'left', 
                 options: 
                   [
-                    { label: "Left", value: "left" },
-                    { label: "Right", value: "right" },
-                    { label: "Middle", value: "middle" },
+                    { label: 'Left', value: 'left' },
+                    { label: 'Right', value: 'right' },
+                    { label: 'Middle', value: 'middle' },
                   ], 
               },
+              { label: 'Image', name: 'image', widget: 'image', required: false },
+              { label: 'Head', name: 'head', widget: 'string', required: false },
+              { label: 'Main', name: 'main', widget: 'text', required: false },
             ], 
         }

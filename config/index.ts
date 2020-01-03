@@ -1,13 +1,19 @@
 module.exports = {
   siteTitle: 'exshak',
-  siteDescription: 'I’m a full-stack software developer based in Ontario, CA.',
+  siteDescription: 'software developer',
   siteShortName: 'Shak',
   siteAuthor: 'exshak',
-  siteUrl: '',
+  siteUrl: 'https://exshak.com',
   pathPrefix: '/',
   backgroundColor: '#222222',
   themeColor: '#1aa0cb',
   favicon: 'src/assets/images/logo.svg',
+  googleAnalyticsID: 'UA-XXXXXXXX-X',
+  keywords: [
+    { id: 0, text: 'full-stack' },
+    { id: 1, text: 'self-taught' },
+    { id: 2, text: 'passionate' },
+  ],
   siteNav: [
     { to: '/', text: 'Home' },
     { to: '/projects', text: 'Projects', textLong: 'My recent projects' },

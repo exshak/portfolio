@@ -3,7 +3,9 @@ import { animated } from 'react-spring'
 import styled from 'styled-components'
 
 export const NavContainer = styled.nav`
-  height: 5rem;
+  background-color: ${props => props.theme.colors.black};
+  /* height: 5rem; */
+  height: 6rem;
   left: 0;
   position: fixed;
   top: 0;
@@ -19,10 +21,13 @@ export const Logo = styled(animated.img)`
   left: calc(100vw / 12);
   position: absolute;
   top: 0;
-  width: 5rem;
+  /* width: 5rem; */
+  margin: 2rem 0 0;
+  width: 10rem;
 
   ${props => props.theme.breakpoints.desktop} {
-    width: 7rem;
+    /* width: 7rem; */
+    width: 14rem;
   }
 `
 
@@ -59,7 +64,8 @@ export const MenuButton = styled.button`
   backface-visibility: hidden;
   cursor: pointer;
   display: flex;
-  height: 5rem;
+  /* height: 5rem; */
+  height: 6rem;
   position: absolute;
   right: calc(100vw / 12);
 
@@ -162,8 +168,10 @@ export const DrawerLink = styled.li`
 export const DrawerLogo = styled.img`
   bottom: -1rem;
   left: 0;
-  opacity: 0.25;
+  /* opacity: 0.25; */
+  opacity: 0.5;
   position: fixed;
-  width: 50%;
+  /* width: 50%; */
+  width: 90%;
   z-index: 5;
 `

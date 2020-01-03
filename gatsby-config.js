@@ -7,6 +7,7 @@ module.exports = {
     username: config.siteShortName,
     author: config.siteAuthor,
     url: config.siteUrl,
+    keywords: config.keywords,
     navigation: config.siteNav,
     social: config.socialLinks,
   },
@@ -38,6 +39,7 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-netlify-cms',
+    'gatsby-plugin-netlify-cache',
     {
       resolve: 'gatsby-plugin-transition-link',
       options: {
@@ -58,6 +60,13 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: config.googleAnalyticsID,
+        head: true,
       },
     },
     {

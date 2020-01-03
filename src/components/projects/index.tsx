@@ -14,11 +14,10 @@ const Projects = () => {
         edges {
           node {
             frontmatter {
-              title
               client
+              title
               slug
               color
-              # outline
               featuredimage {
                 childImageSharp {
                   fluid(maxWidth: 1300, quality: 80) {

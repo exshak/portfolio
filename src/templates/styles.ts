@@ -7,8 +7,7 @@ export const HeaderContainer = styled(animated.header)`
   grid-column: 1 / -1;
   height: 40vh;
   position: relative;
-  color: ${({ client }) =>
-    client === '' ? '' : props => props.theme.colors.white};
+  color: ${props => props.theme.colors.white};
 `
 
 export const HeaderImage = styled(Img)`
@@ -40,5 +39,86 @@ export const HeaderCopy = styled.div`
     p {
       margin-bottom: -0.5rem;
     }
+  }
+`
+
+export const ProjectContainer = styled.div`
+  display: grid;
+  grid-column: 1 / -1;
+  grid-column-gap: 1rem;
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 6rem;
+  overflow: hidden;
+  position: relative;
+`
+
+export const Content = styled.div`
+  box-sizing: content-box;
+  grid-column: 2 / 12;
+  margin-bottom: calc(100vh / 6);
+  position: relative;
+
+  iframe {
+    width: 100%;
+  }
+
+  ${props => props.theme.breakpoints.tablet} {
+    grid-column: 3 / 11;
+  }
+
+  ${props => props.theme.breakpoints.desktop} {
+    /* margin-bottom: calc(100vh / 3); */
+  }
+`
+
+export const LeftContent = styled(Content)`
+  ${props => props.theme.breakpoints.desktop} {
+    grid-column: 1 / 10;
+  }
+`
+
+export const RightContent = styled(Content)`
+  ${props => props.theme.breakpoints.desktop} {
+    grid-column: 4 / -1;
+  }
+`
+
+export const MiddleContent = styled(Content)`
+  ${props => props.theme.breakpoints.desktop} {
+    grid-column: 3 / 11;
+  }
+`
+
+export const Text = styled.div`
+  background-color: ${({ color }) => color};
+  box-shadow: 0 0 5rem rgba(0, 0, 0, 0.25);
+  padding: 3rem;
+  position: relative;
+  width: calc(100% - 6rem);
+  color: ${props => props.theme.colors.white};
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  ${props => props.theme.breakpoints.desktop} {
+    bottom: calc(-100vh / 12);
+    padding: 5rem;
+    position: absolute;
+    max-width: 25%;
+
+    ${({ layout }) => {
+      if (layout === 'left') {
+        return `right: calc(-100vh / 12);`
+      }
+
+      if (layout === 'right') {
+        return `left: calc(-100vh / 12);`
+      }
+
+      if (layout === 'middle') {
+        return null
+      }
+    }}
   }
 `

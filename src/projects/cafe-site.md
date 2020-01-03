@@ -9,4 +9,9 @@ link: 'https://github.com/exshak/cafe-site'
 repo: 'https://github.com/exshak/cafe-site'
 color: '#efdbca'
 featuredimage: /img/cafe-shop.jpg
+content:
+  - layout: left
+    image: /img/cafe-shop.jpg
+    head: 'Cafelina'
+    main: 'Cafe & Bakery'
 ---

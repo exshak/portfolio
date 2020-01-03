@@ -9,6 +9,10 @@ export const SiteMetadata = () => {
           description
           username
           author
+          keywords {
+            id
+            text
+          }
           navigation {
             to
             text
