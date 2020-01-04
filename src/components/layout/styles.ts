@@ -43,6 +43,9 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${theme.colors.black};
     color: ${theme.colors.white};
     font-family: 'Source Sans Pro', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-smooth: always;
+    scrollbar-width: none;
   }
 
   h1,
@@ -87,15 +90,18 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
+  button {
+    background: none;
+    outline: none;
+    border: none;
+  }
+
   input,
-  button ,
   textarea {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
     background: none;
-    outline: none;
-    border: none;
   } 
 
   a {
@@ -130,7 +136,23 @@ export const GlobalStyle = createGlobalStyle`
     h3 {
       font-size: 3.4rem;
     }
-}
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  ::-webkit-scrollbar-track {
+    display: none;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    display: none;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    display: none;
+  }
 `
 
 export const Main = styled(animated.main)`

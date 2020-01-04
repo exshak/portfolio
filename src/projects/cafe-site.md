@@ -7,7 +7,8 @@ slug: /cafelina
 tech: JavaScript, Gatsby, Bootstrap, GraphQL, Contentful
 link: 'https://github.com/exshak/cafe-site'
 repo: 'https://github.com/exshak/cafe-site'
-color: '#efdbca'
+# color: '#efdbca'
+color: '#d3b692'
 featuredimage: /img/cafe-shop.jpg
 content:
   - layout: left

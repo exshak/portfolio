@@ -24,9 +24,9 @@ const NavDrawer = ({ animation, toggleNav }) => {
     >
       <DrawerList>
         <DrawerLink onClick={toggleNav}>
-          <Link to="/" activeClassName="active">
+          {/* <Link to="/" activeClassName="active">
             Home
-          </Link>
+          </Link> */}
         </DrawerLink>
         {navigation.map((item, key) => (
           <DrawerLink key={key} onClick={toggleNav}>

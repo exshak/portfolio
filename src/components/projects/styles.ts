@@ -5,6 +5,7 @@ import Container from '../common/container'
 export const ProjectsContainer = styled(Container)`
   grid-row-gap: 0rem;
   margin-top: 30vh;
+  /* margin-top: 20vh; */
 
   h1 {
     position: relative;
@@ -60,7 +61,8 @@ export const Copy = styled.div`
   left: 0;
   padding: 2rem;
   position: absolute;
-  top: 0;
+  /* top: 0; */
+  bottom: 0;
   z-index: 100;
 
   h2,

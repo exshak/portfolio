@@ -4,7 +4,7 @@ import { animations } from '../common/animations'
 import { SiteMetadata } from '../common/siteMetadata'
 import TextLink from '../common/textLink'
 import { HomeContainer, SubTitle, Text } from './styles'
-import WordsWheel from './wordsWheel'
+import WordWheel from './wordWheel'
 
 const Home = () => {
   const { description, username, keywords, navigation } = SiteMetadata()
@@ -29,7 +29,7 @@ const Home = () => {
           Hello <span>👋🏻</span>, I'm <span>{username}</span>
         </h1>
         <SubTitle>
-          A <WordsWheel words={keywords} /> {description}
+          A <WordWheel words={keywords} /> {description}
         </SubTitle>
         {navigation.map(
           (item, key) =>

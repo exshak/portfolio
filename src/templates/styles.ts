@@ -109,11 +109,11 @@ export const Text = styled.div`
 
     ${({ layout }) => {
       if (layout === 'left') {
-        return `right: calc(-100vh / 12);`
+        return 'right: calc(-100vh / 12);'
       }
 
       if (layout === 'right') {
-        return `left: calc(-100vh / 12);`
+        return 'left: calc(-100vh / 12);'
       }
 
       if (layout === 'middle') {
@@ -121,4 +121,51 @@ export const Text = styled.div`
       }
     }}
   }
+`
+
+export const OtherProjectList = styled.div`
+  display: grid;
+  grid-column: 1 / -1;
+  grid-row-gap: 0;
+  margin-bottom: 0rem;
+
+  ${props => props.theme.breakpoints.tablet} {
+    grid-template-columns: repeat(5, 1fr);
+  }
+`
+
+export const Card = styled.div`
+  background-color: ${({ color }) => color};
+  color: ${props => props.theme.colors.white};
+  cursor: pointer;
+  overflow: hidden;
+  padding: 2rem;
+  padding-bottom: 4rem;
+  position: relative;
+  transform: translateY(0rem);
+  ${props => props.theme.transitions.slowSnap};
+
+  &:hover {
+    transform: translateY(-2.5rem);
+    ${props => props.theme.transitions.mediumSnap};
+  }
+
+  p,
+  h4 {
+    position: relative;
+    z-index: 1;
+  }
+
+  ${props => props.theme.breakpoints.tablet} {
+    min-height: 20rem;
+  }
+`
+
+export const Image = styled(Img)`
+  bottom: 0;
+  opacity: 0.25;
+  position: absolute !important;
+  right: 0;
+  width: 100%;
+  z-index: 0;
 `

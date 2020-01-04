@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { animated, config, useTransition } from 'react-spring'
 import { WordsContainer } from './styles'
 
-const WordsWheel = ({ words }) => {
+const WordWheel = ({ words }) => {
   const [index, setIndex] = useState(0)
 
   const wordsTransition = useTransition(words[index], span => span.id, {
@@ -51,4 +52,8 @@ const WordsWheel = ({ words }) => {
   )
 }
 
-export default WordsWheel
+WordWheel.propTypes = {
+  words: PropTypes.array,
+}
+
+export default WordWheel

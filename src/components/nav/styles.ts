@@ -78,11 +78,12 @@ export const MenuButton = styled.button`
   }
 `
 
-export const LinkContainer = styled.li`
+export const LinkContainer = styled(animated.li)`
   align-items: center;
   display: flex;
   height: 7rem;
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
+  margin: 0 2rem;
   position: relative;
 
   .active {
@@ -105,7 +106,8 @@ export const IconContainer = styled.li`
   align-items: center;
   display: flex;
   height: 7rem;
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
+  margin: 0.3rem 1rem;
   position: relative;
 `
 
