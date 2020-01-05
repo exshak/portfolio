@@ -5,7 +5,7 @@ module.exports = {
   siteAuthor: 'exshak',
   siteUrl: 'https://exshak.com',
   pathPrefix: '/',
-  backgroundColor: '#222222',
+  backgroundColor: '#212121',
   themeColor: '#1aa0cb',
   favicon: 'src/assets/images/logo.svg',
   googleAnalyticsID: 'UA-XXXXXXXX-X',

@@ -32,7 +32,7 @@ const Nav = ({ animation, toggleNav, visible }) => {
     setActive(0)
   }
 
-  const { navigation, social } = SiteMetadata()
+  const { title, navigation, social } = SiteMetadata()
 
   return (
     <NavContainer>
@@ -44,7 +44,7 @@ const Nav = ({ animation, toggleNav, visible }) => {
             ),
           }}
           src={logo}
-          alt="exshak - Logo"
+          alt={title + ' - Logo'}
         />
       </Link>
       <LinkList

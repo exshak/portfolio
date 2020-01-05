@@ -9,7 +9,7 @@ export const theme = {
   },
 
   colors: {
-    black: '#222222',
+    black: '#212121',
     blue: '#1aa0cb',
     white: '#fbfbfb',
   },

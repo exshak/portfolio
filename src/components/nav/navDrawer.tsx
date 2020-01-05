@@ -12,7 +12,7 @@ import {
 } from './styles'
 
 const NavDrawer = ({ animation, toggleNav }) => {
-  const { navigation, social } = SiteMetadata()
+  const { title, navigation, social } = SiteMetadata()
 
   return (
     <DrawerContainer
@@ -23,11 +23,6 @@ const NavDrawer = ({ animation, toggleNav }) => {
       }}
     >
       <DrawerList>
-        <DrawerLink onClick={toggleNav}>
-          {/* <Link to="/" activeClassName="active">
-            Home
-          </Link> */}
-        </DrawerLink>
         {navigation.map((item, key) => (
           <DrawerLink key={key} onClick={toggleNav}>
             <Link to={item.to} activeClassName="active">
@@ -48,7 +43,7 @@ const NavDrawer = ({ animation, toggleNav }) => {
           </a>
         </DrawerLink>
       </IconList>
-      <DrawerLogo src={logo} alt="exshak - Logo" />
+      <DrawerLogo src={logo} alt={title + ' - Logo'} />
     </DrawerContainer>
   )
 }
