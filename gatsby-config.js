@@ -40,6 +40,7 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-netlify-cms',
     'gatsby-plugin-netlify-cache',
+    'gatsby-plugin-use-dark-mode',
     {
       resolve: 'gatsby-plugin-transition-link',
       options: {
