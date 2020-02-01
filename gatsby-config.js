@@ -16,14 +16,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static/img`,
-        name: 'img',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/assets`,
+        path: `${__dirname}/static/images`,
         name: 'images',
       },
     },
@@ -32,6 +25,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/projects`,
         name: 'projects',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/assets`,
+        name: 'assets',
       },
     },
     'gatsby-transformer-sharp',
@@ -57,7 +57,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 2048,
+              maxWidth: 800,
             },
           },
         ],
@@ -67,7 +67,6 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: config.googleAnalyticsID,
-        head: true,
       },
     },
     {
