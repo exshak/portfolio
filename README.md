@@ -58,8 +58,8 @@ Visit site at _`localhost:8000`_
 
 - [React](https://reactjs.org)
 - [Gatsby](https://gatsbyjs.org)
-- [React Spring](https://react-spring.io)
 - [Styled Components](https://styled-components.com)
+- [React Spring](https://react-spring.io)
 - [Netlify CMS](https://netlifycms.org)
 - [Jest](https://jestjs.io)
 - [Netlify](https://netlify.com)
@@ -72,7 +72,7 @@ Visit site at _`localhost:8000`_
 ├── src
 │   ├── assets        # Icons and images
 │   ├── components    # Javascript and css
-│   ├── pages         # Site index and routes
+│   ├── pages         # Site pages and routes
 │   └── projects      # Portfolio projects data
 └── static            # Netlify CMS configuration
 ```
