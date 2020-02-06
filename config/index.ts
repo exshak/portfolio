@@ -7,7 +7,7 @@ module.exports = {
   pathPrefix: '/',
   backgroundColor: '#212121',
   themeColor: '#1aa0cb',
-  favicon: 'src/assets/images/favicon.png',
+  favicon: 'src/assets/icons/favicon.png',
   googleAnalyticsID: 'UA-XXXXXXXX-X',
   keywords: [
     { id: 0, text: 'full-stack' },

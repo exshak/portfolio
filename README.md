@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://exshak.com">
-    <img src="./src/assets/images/favicon.png" alt="exshak" width="100" />
+    <img src="./src/assets/icons/favicon.png" alt="exshak" width="100" />
   </a>
 </p>
 
@@ -38,6 +38,10 @@ _Have a great idea to contribute? Make a pull request, I'm always looking for wa
 - Netlify CD, CMS
 - PWA
 - SEO
+
+## Lighthouse
+
+![Lighthouse](static/images/lighthouse.png)
 
 ## Quick Start
 

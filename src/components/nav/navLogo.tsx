@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 import { animated, useTransition } from 'react-spring'
 import useDarkMode from 'use-dark-mode'
-import logoDark from '../../assets/images/logo-dark.svg'
-import logoLight from '../../assets/images/logo-light.svg'
+import logoDark from '../../assets/icons/logo-dark.svg'
+import logoLight from '../../assets/icons/logo-light.svg'
 import { Logo } from './styles'
 
 const NavLogo = ({ title }) => {
-  const { value: darkMode } = useDarkMode(false)
+  const { value: darkMode } = useDarkMode(true)
 
   const navLogoTransition = useTransition(darkMode, null, {
     config: { duration: 200 },
