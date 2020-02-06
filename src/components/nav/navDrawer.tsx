@@ -1,51 +1,73 @@
-import { Link } from 'gatsby'
-import React from 'react'
+import PropTypes from 'prop-types'
+import React, { useLayoutEffect } from 'react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
-import logo from '../../assets/images/default.svg'
+import { animations } from '../common/animations'
 import { SiteMetadata } from '../common/siteMetadata'
+import ThemeToggle from '../theme'
 import {
+  CustomLink,
   DrawerContainer,
-  DrawerLink,
-  DrawerList,
-  DrawerLogo,
-  IconList,
+  DrawerLinks,
+  IconContainer,
+  IconLink,
+  LinkContainer,
 } from './styles'
 
-const NavDrawer = ({ animation, toggleNav }) => {
-  const { title, navigation, social } = SiteMetadata()
+const NavDrawer = ({ toggleNav, ...rest }) => {
+  const {
+    navigation: nav,
+    social: { github, linkedin },
+  } = SiteMetadata()
+
+  const navLinksTrail = animations.verticalTrail(nav.length, '20px', 300)
+
+  useLayoutEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => (document.body.style.overflow = 'visible')
+  }, [])
 
   return (
-    <DrawerContainer
-      style={{
-        transform: animation.negative.interpolate(
-          y => `translate3d(0, -${y}vh, 0)`
-        ),
-      }}
-    >
-      <DrawerList>
-        {navigation.map((item, key) => (
-          <DrawerLink key={key} onClick={toggleNav}>
-            <Link to={item.to} activeClassName="active">
-              {item.text}
-            </Link>
-          </DrawerLink>
+    <DrawerContainer {...rest}>
+      <DrawerLinks>
+        {navLinksTrail.map((props, index) => (
+          <LinkContainer key={nav[index].to} style={props}>
+            <CustomLink
+              to={nav[index].to}
+              onClick={toggleNav}
+              activeClassName="active"
+            >
+              {nav[index].text}
+            </CustomLink>
+          </LinkContainer>
         ))}
-      </DrawerList>
-      <IconList>
-        <DrawerLink onClick={toggleNav}>
-          <a href={social.github} target="_blank" rel="noopener noreferrer">
+        <IconContainer>
+          <IconLink
+            aria-label={`Visit ${github}`}
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={toggleNav}
+          >
             <FaGithub />
-          </a>
-        </DrawerLink>
-        <DrawerLink onClick={toggleNav}>
-          <a href={social.linkedin} target="_blank" rel="noopener noreferrer">
+          </IconLink>
+          <IconLink
+            aria-label={`Visit ${linkedin}`}
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={toggleNav}
+          >
             <FaLinkedinIn />
-          </a>
-        </DrawerLink>
-      </IconList>
-      <DrawerLogo src={logo} alt={title + ' - Logo'} />
+          </IconLink>
+        </IconContainer>
+      </DrawerLinks>
+      <ThemeToggle mobile="true" />
     </DrawerContainer>
   )
+}
+
+NavDrawer.propTypes = {
+  toggleNav: PropTypes.func,
 }
 
 export default NavDrawer

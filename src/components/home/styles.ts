@@ -3,15 +3,15 @@ import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
   align-items: center;
-  /* display: flex; */
-  display: grid;
-  grid-column: 2 / 12;
+  display: flex;
+  /* display: grid; */
+  grid-column: 3 / 11;
   grid-row-gap: 8rem;
   margin-bottom: 0rem;
   position: relative;
 
-  ${props => props.theme.breakpoints.tablet} {
-    grid-column: 3 / 11;
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    grid-column: 2 / 12;
   }
 `
 
@@ -20,43 +20,43 @@ export const Text = styled(animated.div)`
     font-weight: 500;
 
     span {
-      color: ${props => props.theme.colors.blue};
-      font-size: 3.6rem;
+      color: var(--primary);
+      font-size: 4.8rem;
       font-weight: 900;
     }
 
-    ${props => props.theme.breakpoints.tablet} {
+    @media ${({ theme }) => theme.breakpoints.mobile} {
       span {
-        font-size: 4rem;
+        font-size: 3.6rem;
       }
     }
 
-    ${props => props.theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.tablet} {
       span {
-        font-size: 4.8rem;
+        font-size: 4rem;
       }
     }
   }
 
   h2,
   p {
-    margin: 1rem 0.5rem 5rem;
+    margin: 1rem 0.5rem 8rem;
 
-    ${props => props.theme.breakpoints.desktop} {
-      margin: 1rem 0.5rem 8rem;
+    @media ${({ theme }) => theme.breakpoints.tablet} {
+      margin: 1rem 0.5rem 5rem;
     }
   }
 `
 
 export const SubTitle = styled(animated.h2)`
-  color: ${props => props.theme.colors.white};
+  color: var(--text);
   font-size: 2rem;
   font-weight: 500;
   transition: color 0.2s ease-out;
 `
 
 export const WordsContainer = styled.div`
-  color: #fff;
+  color: var(--text-highlight);
   display: inline-block;
   font-size: 2rem;
   font-style: italic;

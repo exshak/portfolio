@@ -10,22 +10,22 @@ export const PrimaryButton = ({ text }) => (
 )
 
 const Button = styled.button`
-  background-color: ${props => props.theme.colors.blue};
-  color: ${props => props.theme.colors.white};
+  background-color: var(--primary);
+  color: var(--white);
   cursor: pointer;
   float: right;
   padding: 1.5rem 8rem;
   position: relative;
-  width: 100%;
+  width: auto;
   z-index: 0;
 
-  ${props => props.theme.breakpoints.tablet} {
-    width: auto;
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    width: 100%;
   }
 `
 
 const ButtonSpan = styled.span`
-  background-color: ${props => props.theme.colors.black};
+  background-color: var(--background);
   height: 100%;
   left: 0;
   opacity: 0.05;
@@ -35,7 +35,7 @@ const ButtonSpan = styled.span`
   transform-origin: 50% 100%;
   width: 100%;
   z-index: -1;
-  ${props => props.theme.transitions.mediumSnap}
+  ${({ theme }) => theme.transitions.mediumSnap}
 
   ${Button}:hover & {
     transform: scale3d(1, 1, 1);

@@ -69,11 +69,12 @@ Visit site at _`localhost:8000`_
 ```sh
 .
 ├── config            # SEO manifest
+├── content           # CMS collections
 ├── src
 │   ├── assets        # Icons and images
 │   ├── components    # Javascript and css
 │   ├── pages         # Site pages and routes
-│   └── projects      # Portfolio projects data
+│   └── utils         # Utility functions/hooks
 └── static            # Netlify CMS configuration
 ```
 

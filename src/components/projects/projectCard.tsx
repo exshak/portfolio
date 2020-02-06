@@ -1,42 +1,38 @@
-import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import React from 'react'
-import {
-  Background,
-  Button,
-  Card,
-  CardContainer,
-  Client,
-  Copy,
-  ImageWrapper,
-} from './styles'
+import { FaGithub } from 'react-icons/fa'
+import { GoLinkExternal } from 'react-icons/go'
+import { Buttons, Card, Content, IconLink, Image, Stack, Text } from './styles'
 
-const ProjectCard = ({ index, project }) => (
-  <Card
-    index={index + 1}
-    color={project.color}
-    bg={project.color}
-    to={`/projects${project.slug}`}
-    aria-label={`Read more about ${project.title}`}
-    cover
-    direction="right"
-  >
-    <CardContainer>
-      <Copy client={project.client}>
-        <Client color={project.color}>{project.client}</Client>
-        <h2>{project.title}</h2>
-      </Copy>
-      <ImageWrapper index={index + 1} client={project.client}>
-        <Img
-          alt={project.title}
-          fluid={project.featuredimage.childImageSharp.fluid}
-        />
-      </ImageWrapper>
-      <Button color={project.color} client={project.client}>
-        Read more
-      </Button>
-      <Background color={project.color} />
-    </CardContainer>
+const ProjectCard = ({
+  project: { title, body, stack, link, repo, featuredImage },
+}) => (
+  <Card>
+    <Image fluid={featuredImage.childImageSharp.fluid} alt={title} />
+    <Content>
+      <h2>{title}</h2>
+      Built with <span>{stack.split(', ')[1]}</span>
+      <Text dangerouslySetInnerHTML={{ __html: body }} />
+      <Stack>{stack.replace(/(, )/g, ' · ')}</Stack>
+      <Buttons>
+        <IconLink
+          aria-label={`Visit ${repo}`}
+          href={repo}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub />
+        </IconLink>
+        <IconLink
+          aria-label={`Visit ${link}`}
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GoLinkExternal />
+        </IconLink>
+      </Buttons>
+    </Content>
   </Card>
 )
 

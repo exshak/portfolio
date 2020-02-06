@@ -1,149 +1,103 @@
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import Img from 'gatsby-image'
 import styled from 'styled-components'
 import Container from '../common/container'
 
 export const ProjectsContainer = styled(Container)`
   grid-row-gap: 0rem;
   margin-top: 30vh;
-  /* margin-top: 20vh; */
 
   h1 {
-    position: relative;
-    transform: translateY(1rem);
-    z-index: 10000;
-
-    ${props => props.theme.breakpoints.desktop} {
-      font-size: 8rem;
-      transform: translateY(2rem);
-    }
+    margin-bottom: 2rem;
   }
 `
 
-export const Grid = styled.div`
+export const ProjectsGrid = styled.div`
   display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: 1fr 1fr;
+  grid-gap: 4rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `
 
-export const Card = styled(AniLink)`
-  grid-column: span 2;
-  overflow: hidden;
-  padding-top: 100%;
+export const Card = styled.div`
+  box-shadow: rgba(2, 12, 27, 0.7) 0 10px 30px -15px;
+  width: 100%;
+`
+
+export const Image = styled(Img)`
+  height: 250px;
+`
+
+export const Content = styled.div`
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 2rem;
   position: relative;
 
-  ${props => props.theme.breakpoints.tablet} {
-    grid-column: ${({ index }) => (index % 3 === 0 ? `span 2` : `span 1`)};
-    padding-top: ${({ index }) => (index % 3 === 0 ? `50%` : `100%`)};
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
   }
-`
 
-export const Background = styled.span`
-  background-color: ${({ color }) => color};
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-`
-
-export const CardContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-`
-
-export const Copy = styled.div`
-  left: 0;
-  padding: 2rem;
-  position: absolute;
-  /* top: 0; */
-  bottom: 0;
-  z-index: 100;
-
-  h2,
-  p {
+  span {
+    color: var(--primary);
     font-size: 1.8rem;
+    font-weight: 600;
   }
+`
 
-  color: ${props => props.theme.colors.white};
+export const Text = styled.div`
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 1rem 0;
 
-  ${props => props.theme.breakpoints.desktop} {
-    padding: 4rem;
-    top: auto;
-    bottom: ${({ client }) =>
-      client === '' || client === '' || client === '' ? `auto` : `0`};
+  p {
+    line-height: 1.5;
 
-    h2 {
-      font-size: 4rem;
+    & a {
+      color: var(--text-highlight);
+      font-weight: 500;
+
+      &:hover {
+        color: var(--primary);
+      }
     }
   }
 `
 
-export const Client = styled.p`
-  font-weight: 200;
+export const Stack = styled.div`
+  color: var(--text-highlight);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
 
-  ${props => props.theme.breakpoints.desktop} {
-    font-weight: 400;
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    letter-spacing: 0rem;
   }
 `
 
-export const ImageWrapper = styled.div`
-  bottom: 0;
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  transform: scale(1);
-  ${props => props.theme.transitions.slowSnap};
-  height: ${({ index }) => (index % 3 === 0 ? `50%` : `100%`)};
-  width: ${({ index }) => (index % 3 === 0 ? `50%` : `100%`)};
-  transform-origin: ${({ client }) => (client === '' ? `50% 100%` : `50%`)};
-
-  ${Card}:hover & {
-    transform: scale(1.1);
-  }
-
-  ${Card}:focus & {
-    transform: scale(1.1);
-  }
-
-  ${props => props.theme.breakpoints.tablet} {
-    height: 100%;
-  }
+export const Buttons = styled.div`
+  display: flex;
+  justify-content: flex-end;
 `
 
-export const Button = styled.button`
-  background-color: ${props => props.theme.colors.black};
-  bottom: 0;
-  color: ${props => props.theme.colors.white};
+export const IconLink = styled.a`
   cursor: pointer;
-  padding: 1.5rem 4rem;
-  position: absolute;
-  right: 2rem;
-  text-align: right;
-  transform: translateY(6rem);
-  ${props => props.theme.transitions.mediumSnap};
+  padding: 1rem 1rem 0;
+  transition: all 0.2s ease-out;
 
-  ${Card}:hover & {
-    transform: translateY(0rem);
+  &:hover {
+    color: var(--primary);
+    transform: translateY(-3px);
   }
 
-  ${Card}:focus & {
-    transform: translateY(0rem);
-  }
-
-  ${props => props.theme.breakpoints.desktop} {
-    right: 4rem;
-    bottom: ${({ client }) =>
-      client === '' || client === '' || client === '' ? `0` : `auto`};
-
-    transform: ${({ client }) =>
-      client === '' || client === '' || client === ''
-        ? `translateY(6rem)`
-        : `translateY(-6rem)`};
+  svg {
+    height: 2rem;
   }
 `

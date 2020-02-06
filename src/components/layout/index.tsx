@@ -1,40 +1,30 @@
 import PropTypes from 'prop-types'
-import React, { Fragment, useState } from 'react'
-import { config, useSpring } from 'react-spring'
+import React, { useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import 'typeface-source-sans-pro'
 import Nav from '../nav'
-import NavDrawer from '../nav/navDrawer'
 import { GlobalStyle, Main, theme } from './styles'
 
 const Layout = ({ children }) => {
-  const [visible, setVisible] = useState(false)
+  const changeVhVariable = () => {
+    // Get the viewport height and multiply it by 1% to get a value for vh
+    let vh = typeof window !== 'undefined' && window.innerHeight * 0.01
+    // Set the value in the --vh custom property to the document root
+    typeof document !== 'undefined' &&
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+  }
 
-  const toggleNav = () => setVisible(!visible)
-
-  const animation = useSpring({
-    positive: visible ? 100 : 0,
-    negative: visible ? 0 : 100,
-    config: config.slow,
-  })
+  useEffect(() => {
+    window.addEventListener('resize', changeVhVariable)
+    return () => window.removeEventListener('resize', changeVhVariable)
+  }, [])
 
   return (
-    <Fragment>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Nav animation={animation} toggleNav={toggleNav} visible={visible} />
-        <Main
-          style={{
-            transform: animation.positive.interpolate(
-              y => `translate3d(0, ${y}vh, 0)`
-            ),
-          }}
-        >
-          {children}
-        </Main>
-        <NavDrawer animation={animation} toggleNav={toggleNav} />
-      </ThemeProvider>
-    </Fragment>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Nav />
+      <Main>{children}</Main>
+    </ThemeProvider>
   )
 }
 

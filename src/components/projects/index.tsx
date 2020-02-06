@@ -2,25 +2,27 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { animations } from '../common/animations'
 import ProjectCard from './projectCard'
-import { Grid, ProjectsContainer } from './styles'
+import { ProjectsContainer, ProjectsGrid } from './styles'
 
 const Projects = () => {
-  const { allMarkdownRemark } = useStaticQuery(graphql`
+  const { projects } = useStaticQuery(graphql`
     query Projects {
-      allMarkdownRemark(
-        sort: { order: ASC, fields: [frontmatter___date] }
+      projects: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
         filter: { fileAbsolutePath: { regex: "/projects/" } }
       ) {
         edges {
           node {
+            id
+            html
             frontmatter {
-              client
               title
-              slug
-              color
-              featuredimage {
+              stack
+              link
+              repo
+              featuredImage {
                 childImageSharp {
-                  fluid(maxWidth: 1300, quality: 80) {
+                  fluid(maxWidth: 800, quality: 80) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -33,17 +35,13 @@ const Projects = () => {
   `)
 
   return (
-    <ProjectsContainer style={animations.verticleSlide('15rem', 0)}>
+    <ProjectsContainer style={animations.verticalSlide('15rem', 0)}>
       <h1>Projects</h1>
-      <Grid>
-        {allMarkdownRemark.edges.map(({ node }, index) => (
-          <ProjectCard
-            index={index}
-            key={node.frontmatter.slug}
-            project={node.frontmatter}
-          />
+      <ProjectsGrid>
+        {projects.edges.map(({ node: { id, html: body, frontmatter } }) => (
+          <ProjectCard key={id} project={{ body, ...frontmatter }} />
         ))}
-      </Grid>
+      </ProjectsGrid>
     </ProjectsContainer>
   )
 }

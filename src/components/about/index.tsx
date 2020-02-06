@@ -6,7 +6,7 @@ import { ContentContainer } from '../common/container'
 import TitleCard from '../common/titleCard'
 
 const About = () => (
-  <ContentContainer style={animations.verticleSlide('15rem', 0)}>
+  <ContentContainer style={animations.verticalSlide('15rem', 0)}>
     <TitleCard
       title="About"
       copy="Download a copy of my CV below."

@@ -26,7 +26,7 @@ const Card = styled.div`
   }
 
   a {
-    color: ${props => props.theme.colors.blue};
+    color: var(--primary);
 
     svg {
       transform: translate(0.75rem, 0.25rem);

@@ -7,7 +7,7 @@ export const TextInput = ({ id, label, required }) => (
     <label htmlFor={id}>
       <p>{label}</p>
     </label>
-    <input type="text" name={id} id={id} required={required} />
+    <input type="text" id={id} name={id} required={required} />
   </Input>
 )
 
@@ -16,7 +16,7 @@ export const EmailInput = ({ id, label, required }) => (
     <label htmlFor={id}>
       <p>{label}</p>
     </label>
-    <input type="email" name={id} id={id} required={required} />
+    <input type="email" id={id} name={id} required={required} />
   </Input>
 )
 
@@ -25,7 +25,7 @@ export const TextArea = ({ id, label, required }) => (
     <label htmlFor={id}>
       <p>{label}</p>
     </label>
-    <textarea name={id} id={id} required={required} />
+    <textarea id={id} name={id} required={required} />
   </Input>
 )
 
@@ -35,7 +35,7 @@ const Input = styled.div`
   margin-bottom: 4rem;
 
   p {
-    background-color: ${props => props.theme.colors.black};
+    background-color: var(--background);
     padding: 0 1rem;
     transform: translate(1rem, 1rem);
     width: fit-content;
@@ -43,8 +43,8 @@ const Input = styled.div`
 
   input,
   textarea {
-    border: 0.1rem solid ${props => props.theme.colors.white};
-    color: ${props => props.theme.colors.white};
+    border: 0.1rem solid var(--text);
+    color: var(--text);
     padding: 2rem;
   }
 `

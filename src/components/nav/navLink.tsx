@@ -1,24 +1,14 @@
 import PropTypes from 'prop-types'
 import React, { Fragment, useRef } from 'react'
-import { config, useTrail } from 'react-spring'
+import { animations } from '../common/animations'
 import { CustomLink, LinkContainer } from './styles'
 
 const NavLink = ({ nav, mouseOver }) => {
-  const navItemsTrail = useTrail(nav.length, {
-    config: config.wobbly,
-    delay: 300,
-    opacity: 1,
-    transform: 'translateY(0px)',
-
-    from: {
-      opacity: 0,
-      transform: 'translateY(20px)',
-    },
-  })
+  const navLinksTrail = animations.verticalTrail(nav.length, '20px', 300)
 
   return (
     <Fragment>
-      {navItemsTrail.map((props, index) => {
+      {navLinksTrail.map((props, index) => {
         const containerRef = useRef(null)
 
         return (

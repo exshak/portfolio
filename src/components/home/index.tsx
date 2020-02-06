@@ -23,19 +23,16 @@ const Home = () => {
 
   return (
     <HomeContainer>
-      <Text style={animations.verticleSlide('15rem', 0)}>
+      <Text style={animations.verticalSlide('15rem', 0)}>
         <h1>
-          {/* Hi <span>👋🏻</span>, my name’s <span>{username}</span> */}
           Hello <span>👋🏻</span>, I'm <span>{username}</span>
         </h1>
         <SubTitle>
           A <WordWheel words={keywords} /> {description}
         </SubTitle>
         {navigation.map(
-          (item, key) =>
-            item.textLong && (
-              <TextLink key={key} to={item.to} text={item.textLong} />
-            )
+          ({ to, textLong }, i) =>
+            textLong && <TextLink key={to + i} to={to} text={textLong} />
         )}
       </Text>
     </HomeContainer>

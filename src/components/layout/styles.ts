@@ -3,15 +3,25 @@ import styled, { createGlobalStyle } from 'styled-components'
 
 export const theme = {
   breakpoints: {
-    tablet: '@media (min-width: 600px)',
-    tablet768: '@media (min-width: 768px)',
-    desktop: '@media (min-width: 1025px)',
+    mobile: '(max-width: 600px)',
+    tablet: '(max-width: 768px)',
+    desktop: '(max-width: 1024px)',
   },
 
   colors: {
-    black: '#212121',
-    blue: '#1aa0cb',
-    white: '#fbfbfb',
+    main: '#1aa0cb',
+    light: '#089eca',
+    lighter: '#36a6ba',
+    lightTheme: {
+      text: '#575757',
+      textHighlight: '#333333',
+      background: '#fbfbfb',
+    },
+    darkTheme: {
+      text: '#dadada',
+      textHighlight: '#f0f0f0',
+      background: '#212121',
+    },
   },
 
   transitions: {
@@ -40,12 +50,41 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${theme.colors.black};
-    color: ${theme.colors.white};
+    background-color: var(--background);
+    color: var(--text);
     font-family: 'Source Sans Pro', sans-serif;
-    -webkit-font-smoothing: antialiased;
     font-smooth: always;
+    overflow: visible;
     scrollbar-width: none;
+    transition: color 0.2s ease-out, background 0.2s ease-out;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+    --primary: ${theme.colors.main};
+    --primary-light: ${theme.colors.light};
+    --primary-lighter: ${theme.colors.lighter};
+    --text: ${theme.colors.darkTheme.text};
+    --text-highlight: ${theme.colors.darkTheme.textHighlight};
+    --background: ${theme.colors.darkTheme.background};
+    --white: #ffffff;
+    --offwhite: #f9f9f9;
+    --navbar: rgba(33, 33, 33, 0.95);
+    --shadow-btn: rgba(7, 49, 69, .1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    
+    &.light-mode {
+      --navbar: rgba(255, 255, 255, 0.95);
+      --text: ${theme.colors.lightTheme.text};
+      --text-highlight: ${theme.colors.lightTheme.textHighlight};
+      --background: ${theme.colors.lightTheme.background};
+    }
+    
+    &.dark-mode {
+      --navbar: rgba(33, 33, 33, 0.95);
+      --text: ${theme.colors.darkTheme.text};
+      --text-highlight: ${theme.colors.darkTheme.textHighlight};
+      --background: ${theme.colors.darkTheme.background};
+    }
   }
 
   h1,
@@ -57,15 +96,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 3.6rem;
+    font-size: 4.8rem;
   }
 
   h2 {
-    font-size: 2.8rem;
+    font-size: 4rem;
   }
 
   h3 {
-    font-size: 2.4rem;
+    font-size: 3.4rem;
   }
 
   h4 {
@@ -85,10 +124,16 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 2.2rem;
   }
 
-  ol,
+  a {
+    color: var(--text);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  /* ol,
   ul {
     list-style: none;
-  }
+  } */
 
   button {
     background: none;
@@ -104,13 +149,7 @@ export const GlobalStyle = createGlobalStyle`
     background: none;
   } 
 
-  a {
-    color: ${theme.colors.white};
-    font-weight: 700;
-    text-decoration: none;
-  }
-
-  @media (min-width: 600px) {
+  @media ${theme.breakpoints.desktop} {
     h1 {
       font-size: 4rem;
     }
@@ -124,44 +163,36 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  @media (min-width: 1024px) {
+  @media ${theme.breakpoints.mobile} {
     h1 {
-      font-size: 4.8rem;
+      font-size: 3.6rem;
     }
 
     h2 {
-      font-size: 4rem;
+      font-size: 2.8rem;
     }
 
     h3 {
-      font-size: 3.4rem;
+      font-size: 2.4rem;
     }
   }
 
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
-  ::-webkit-scrollbar-track {
-    display: none;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    display: none;
-  }
-
+  ::-webkit-scrollbar,
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-thumb,
   ::-webkit-scrollbar-thumb:hover {
     display: none;
   }
 `
 
 export const Main = styled(animated.main)`
+  margin: 0 auto;
+  max-width: 1280px;
+
   .tl-edges {
     overflow-x: visible;
 
     .tl-wrapper {
-      background-color: ${theme.colors.black};
-      color: ${theme.colors.white};
       display: grid;
       grid-column-gap: 1rem;
       grid-template-columns: repeat(12, 1fr);
@@ -169,10 +200,5 @@ export const Main = styled(animated.main)`
       position: relative;
       z-index: 0;
     }
-  }
-
-  ${theme.breakpoints.desktop} {
-    margin: 0 auto;
-    max-width: 1280px;
   }
 `

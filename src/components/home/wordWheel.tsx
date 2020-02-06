@@ -10,7 +10,6 @@ const WordWheel = ({ words }) => {
     config: config.stiff,
     delay: 450,
     duration: 100,
-
     from: {
       left: 0,
       margin: 0,
@@ -19,26 +18,24 @@ const WordWheel = ({ words }) => {
       top: 0,
       transform: 'translateY(10px)',
     },
-
     enter: {
       opacity: 1,
       transform: 'translateY(0px)',
     },
-
     leave: {
       opacity: 0,
       transform: 'translateY(-10px)',
     },
   })
 
-  useEffect(
-    () =>
-      void setInterval(
-        () => setIndex(current => (current + 1) % words.length),
-        2500
-      ),
-    []
-  )
+  useEffect(() => {
+    const intervalId = setInterval(
+      () => setIndex(current => (current + 1) % words.length),
+      2500
+    )
+
+    return () => clearInterval(intervalId)
+  }, [])
 
   return (
     <WordsContainer>
@@ -53,7 +50,7 @@ const WordWheel = ({ words }) => {
 }
 
 WordWheel.propTypes = {
-  words: PropTypes.array,
+  words: PropTypes.array.isRequired,
 }
 
 export default WordWheel
