@@ -15,25 +15,38 @@ const About = () => (
       icon={<FaFilePdf />}
     />
     <p>
-      I'm a self-taught frontend & backend software developer. I like working on
-      anything from system design, user interface and experience prototyping, to
-      creating scripts & tools.
+      I'm a self-taught frontend & backend software developer with a passion for
+      bringing ideas to life through code. I enjoy writing clean, well
+      architected code and am a big proponent of test driven development. I like
+      working on anything from UI/UX prototyping, system design, to creating
+      scripts & tools.
       <br />
       <br />
       Outside of work I like to work on full-stack web applications with a
-      combination of React and GraphQL with backend services like Firebase and
-      Netlify.
+      combination of React and GraphQL on the client-side. Some backend
+      frameworks I enjoy working with are Node.js and Express along with
+      microservices like Docker and AWS.
       <br />
       <br />
-      I'm a nerd who loves Vim/Emacs, Linux and OS X and enjoys customizing all
-      of the development environment.
+      Ultimately I'm a nerd who loves Vim/Emacs, Linux and OSX. I enjoy
+      customizing all parts of the development environment and I'm a believer in
+      <i> dotfiles are meant to be shared</i>, you can check out mine
+      <a
+        href="https://github.com/exshak"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {' '}
+        here.
+      </a>
       <br />
       <br />
-      If I'm not desiging or coding something I'll be enjoying a night out with
-      friends and/or family.
+      When I'm not behind my computer you can find me exploring the local food
+      scene or enjoying a game night with friends.
       <br />
       <br />
-      <Link to="/contact">get in touch.</Link>
+      If that sounds like someone you’d like to collaborate with then
+      <Link to="/contact"> get in touch.</Link>
     </p>
   </ContentContainer>
 )

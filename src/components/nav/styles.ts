@@ -15,7 +15,7 @@ export const NavContainer = styled(animated.nav)`
 
 export const Logo = styled(animated.img)`
   left: calc(100vw / 12);
-  margin-top: 1.8rem;
+  margin: 1.6rem 0;
   position: absolute;
   top: 0;
   width: 14rem;

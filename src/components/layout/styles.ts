@@ -112,6 +112,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a,
+  i,
   p,
   li,
   svg,
@@ -130,10 +131,10 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  /* ol,
-  ul {
-    list-style: none;
-  } */
+  i {
+    color: var(--text-highlight);
+    font-weight: 500;
+  }
 
   button {
     background: none;

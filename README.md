@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://exshak.com">
-    <img src="./src/assets/images/default.svg" alt="exshak" width="300" />
+    <img src="./src/assets/images/favicon.png" alt="exshak" width="100" />
   </a>
 </p>
 
@@ -24,7 +24,7 @@
 
 ---
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+My personal portfolio where I can showcase projects I've been working on. I wanted something fast and with good SEO, so a static website generator like Gatsby seemed like the best fit. It reads data from markdown files, so it's super easy for me to keep adding Portfolio items as I keep developing stuff.
 
 _Have a great idea to contribute? Make a pull request, I'm always looking for ways to improve my [portfolio](https://exshak.com)._
 

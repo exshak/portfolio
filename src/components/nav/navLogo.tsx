@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 import { animated, useTransition } from 'react-spring'
 import useDarkMode from 'use-dark-mode'
-import logoLight from '../../assets/images/default.svg'
-import logoDark from '../../assets/images/test.svg'
+import logoDark from '../../assets/images/logo-dark.svg'
+import logoLight from '../../assets/images/logo-light.svg'
 import { Logo } from './styles'
 
 const NavLogo = ({ title }) => {

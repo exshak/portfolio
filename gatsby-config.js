@@ -6,7 +6,6 @@ module.exports = {
     description: config.siteDescription,
     username: config.siteShortName,
     author: config.siteAuthor,
-    url: config.siteUrl,
     keywords: config.keywords,
     navigation: config.siteNav,
     social: config.socialLinks,
