@@ -5,7 +5,7 @@ import useDarkMode from 'use-dark-mode'
 import { Container, Label, Span } from './styles'
 
 const ThemeToggle = ({ mobile }) => {
-  const darkMode = useDarkMode(false)
+  const darkMode = useDarkMode(true)
 
   const ThemeToggleSpring = useSpring({
     delay: 200,
