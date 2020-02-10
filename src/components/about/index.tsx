@@ -10,7 +10,7 @@ const About = () => (
     <TitleCard
       title="About"
       copy="Download a copy of my CV below."
-      link="https://drive.google.com/open?id="
+      link="https://drive.google.com/file/d/1gA93vBRW7wZVRH09QQ1XSfByRe7Hjjj6/view"
       linkText="Download CV"
       icon={<FaFilePdf />}
     />
