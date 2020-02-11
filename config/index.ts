@@ -8,7 +8,7 @@ module.exports = {
   backgroundColor: '#212121',
   themeColor: '#1aa0cb',
   favicon: 'src/assets/icons/favicon.png',
-  googleAnalyticsID: 'UA-XXXXXXXX-X',
+  googleAnalyticsID: 'UA-158195233-1',
   keywords: [
     { id: 0, text: 'full-stack' },
     { id: 1, text: 'self-taught' },
