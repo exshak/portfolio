@@ -32,7 +32,7 @@ const About = () => (
       customizing all parts of the development environment and I'm a believer in
       <i> dotfiles are meant to be shared</i>, you can check out mine
       <a
-        href="https://github.com/exshak"
+        href="https://github.com/exshak/dotfiles"
         target="_blank"
         rel="noopener noreferrer"
       >
